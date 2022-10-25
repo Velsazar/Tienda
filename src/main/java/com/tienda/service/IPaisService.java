@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.tienda.entity;
+package com.tienda.service;
 
-public class País {
+import com.tienda.entity.Pais;
+import java.util.List;
 
+public interface IPaisService {
+    public List<Pais> listCountry();
 }
