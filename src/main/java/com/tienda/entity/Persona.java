@@ -1,10 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tienda.entity;
 
+/**
+ *
+ * @author rlobando
+ */
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,24 +17,22 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
-@Entity
-@Table(name = "personas")
-public class Persona implements Serializable {
-
+@Entity 
+@Table(name="personas")
+public class Persona implements Serializable {   
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
-
+    
     private String nombre;
     private String apellido1;
     private String apellido2;
     private String telefono;
     private String email;
-
-    @ManyToOne
-    @JoinColumn(name = "paises_id")
-    private Pais pais;
+    
+    @ManyToOne                   //es un for inkey para nuestra DB (una relacion de mucho a uno)
+    @JoinColumn(name="paises_id")//aqui inidcamos que es autoincremental 
+    private Pais pais; //representacion esta dada por un objeto y ese objeto es de tipo "pais"
 
     public long getId() {
         return id;
@@ -88,5 +89,9 @@ public class Persona implements Serializable {
     public void setPais(Pais pais) {
         this.pais = pais;
     }
-
+   
+    
+    
+    
 }
+

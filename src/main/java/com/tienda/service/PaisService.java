@@ -1,11 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package com.tienda.service;
 
+
+/**
+ *
+ * @author rlobando
+ * 
+ */
 import com.tienda.entity.Pais;
 import com.tienda.repository.PaisRepository;
 import java.util.List;
@@ -15,11 +19,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service
 public class PaisService implements IPaisService {
     
-    @Autowired
+    @Autowired   //para instanciar un repo dentro del servicio(es tener mundos aparte)ocupa un enlace que es el AUTOWIRED, enlaza ese tipo diferente de objetos o elemntos
+    private PaisRepository paisRepository;
 
     @Override
     public List<Pais> listCountry() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+        return (List<Pais>)paisRepository.findAll();  }   
 }

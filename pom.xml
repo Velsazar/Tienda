@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -10,13 +10,22 @@
     </parent>
     <groupId>com.tienda</groupId>
     <artifactId>tienda</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <name>tienda</name>
-    <description>Projecto hecho en clases de WEB y PATRONES</description>
+    <description>Proyecto hecho en clase de Web y Partones</description>
     <properties>
         <java.version>15</java.version>
     </properties>
     <dependencies>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jdbc</artifactId>
+</dependency>
+        <dependency>
+    <groupId>org.hibernate.javax.persistence</groupId>
+    <artifactId>hibernate-jpa-2.1-api</artifactId>
+    <version>1.0.0.Final</version>
+</dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -25,13 +34,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>javax.persistence-api</artifactId>
+    </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -42,24 +59,35 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
-        <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>javax.persistence-api</artifactId>
-            <version>2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.25</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jpa</artifactId>
+            <version>2.0.8</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>app.cash.sqldelight</groupId>
+            <artifactId>mysql-dialect</artifactId>
+            <version>2.0.0-alpha04</version>
+            <scope>runtime</scope>
+            <type>pom.sha512</type>
+        </dependency>
+        <dependency>
+            <groupId>org.danbrough.sqldelight</groupId>
+            <artifactId>mysql-dialect</artifactId>
+            <version>2.0.0-alpha03</version>
+            <scope>runtime</scope>
+            <type>pom.sha512</type>
+        </dependency>
     </dependencies>
 
-    <build>
+
+
+   <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -75,5 +103,7 @@
             </plugin>
         </plugins>
     </build>
+
+
 
 </project>

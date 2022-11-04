@@ -1,0 +1,52 @@
+Modelo Vista Controlador(MVC)
+ Vista: lo que el usuario puede ver HTML y CSS
+Controller y Model: interactuar con esta vista
+
+Hasta el momento tenemos una pagina statica,
+ahi es donde  entra el Back-End
+
+Se necesita un medio para poder comunicar entre la vista y el controlador: 
+esto es RestAPI:-->Se conforma por metodos *Put, Patch,Post,Get,Delete.
+como me comunico-->por medio de URL o pueden pasar PARAMETROS
+
+-Cuando llega al Controller--> esta REQ o peticion que le hace al Controller
+
+el Controller recibe los REQ (PERO no sabe como ejecutarlo)"Es un intermediario entre la vista y el controlador"
+el va a usar Service: Este se encarga: manipular la informacion que se quiere  retornar a la vista
+
+Service: Se divide en 2 Interface y Service
+El controller utiliza el INTERFACE:el Interface es un tipo de objeto en java, el cual NO define como se realiza los metodos..
+**Proporciona una capa de seguridad a nuestro codigo*
+sino nada mas dice que metodos se van a realizar.
+Luego de que el controller utiliza la interface, y esa esta implementada en el SERVICE
+
+este Service ahora si va hacer la peticion a la DataBase con la Info,
+puede que en el servicio tenga logica dentro del SERVICE para ordenarlo de cierta manera 
+}el servicio como tal no tiene  los datos, solamente consulta y manipula
+
+Donde se guarda la info: en una BAse de DATOS-->MySQL  (MODELO)-->persistencia de datos, va a tener toda la info 
+de la pagina web.
+EL necesita un ente el cual haga todas las consultas a la BD
+este ente es el REPOSITORY-->este hace las  consultas a la BD-->Deme esto deme info de lo otro Query 
+
+cuando se realiza la consulta a la BD-->nos retorna info --> "pilas" guardado en "TABLAS"
+ una vez retorna de la BD a repositotio REPOSITORY guarda en Entidades --> estan van a manipular el servicio luego...
+Cuando ya las  manipulo y sabe loque quier devolver, llega al CONTROLLER-->Se lo devuelve a la vista 
+hay que hacer cierta abraccion -->  ENTITY--> una copia exacta en nuestra tabla vista como un objeto 
+
+ORM-->Object relationship maping -->donde mapeamos todas nuestras tablas"columnas" como Objetos
+ cada columna un atributo, al final voy a tener una clase la cual va tener la misma cantidad de atributos como Columnas 
+tenga mi tabla..............................
+
+
+NOTAS: Donde desarrollamos nuestro Back-end -->va en Source Packages...
+
+1.conexion 
+2.Entity
+3.repository
+ *******REST API,***** cada solicitud tiene un metodo https.. metodo para señalar tipo de accion 
+
+Get:pide solicitar una copia de un recurso
+Post:envia datos a un servidor para crear un nuevo recurso
+put:envia datos a un servidor para modificar un recurso existente
+Delete:enviar para eliminar un recurso. 

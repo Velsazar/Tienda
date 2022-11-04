@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.tienda.entity;
 
 import java.io.Serializable;
@@ -13,14 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ *
+ * @author rlobando
+ */
+@Entity //Patron decorador,en tiempo de ejecucion(cuando se instancia una clase "pais por ejemplo", le da ciertas caracteristicas a nuestra clase como tal , Spring va a entender que ese
+//objeto es una entidad
+@Table(name = "paises")//le indico que la tabla que hace  refencia se llama "paises"
+//Mapeando mi tabla llamada paises a una clase de JAVA, con la misma cantidad de atributos que tenga mi DB
 
-@Entity
-@Table(name = "paises")
 public class Pais implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Id      //identificador que sea unico 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //esto es autoincremental, para cuando hagamos un insert , que el ID no es requerido ya que tiene autoincremental
+    private long id;//primary key 
     private String pais;
 
     public long getId() {
