@@ -12,7 +12,7 @@
     </head>
     <body>
         <header th:fragment="header" class="header1">
-           <nav>
+            <nav>
                 <ul>
                     <li><a href="url">Home</a></li>
                     <li><a href="url">Login</a></li>
@@ -34,11 +34,15 @@
                     </div>
                 </div>
             </nav>
-
-        <footer th:fragment="footer">
-            <p>Danny<br>
-                <a href="mailto:support@example.com">support@example.com</a>
-            </p>
-        </footer>
+            </header>
+            <footer th:fragment="footer">
+                <p>Danny<br>
+                    <a href="mailto:support@example.com">support@example.com</a>
+                    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"                    
+                       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>               
+                    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"                   
+                       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+                </p>
+            </footer>
     </body>
 </html>
