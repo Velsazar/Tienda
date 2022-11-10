@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">   
-     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/home.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    </head> 
+     <head th:replace="plantilla/template::head"></head> 
 
     <body>       
-     
+    <heade th:replace="plantilla/template::header"></heade>
+        
         <h1 th:text="${titulo}"></h1>   <!-- donde el vea titulo, va a ser sustituido por tabla persona --> 
         <h1 th:text="#{cliente.nombre}"></h1><!-- th: thymleaf : atributo se importa arriba , nos permite poder agregar info dinamicamente dentro del html -->
         <table class="table table-dark table-striped"> <!-- etiqueta TABLE= vamos a genrarr una tabla agrupacion tipo tabla -->
@@ -47,5 +42,7 @@
     </table>
    
 </body>
+
+<footer th:replace="plantilla/template::footer"></footer>
 
 </html>
