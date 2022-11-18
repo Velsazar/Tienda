@@ -11,10 +11,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author rlobando
- */
 
 @Service      //Definimos que es un Servicio
 public class PersonaService implements IPersonaService{//implementamos los metodos de la Interfaz
@@ -41,4 +37,9 @@ public class PersonaService implements IPersonaService{//implementamos los metod
     public void delete(long id) { 
         personaRepository.deleteById(id);
     }    
+    
+    @Override
+    public Persona findByNombre(String nombre) { 
+        return personaRepository.findByNombre(nombre);
+    }     
 }

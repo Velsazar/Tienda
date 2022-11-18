@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- *
- * @author rlobando
- */
+
 @Controller //igual definimos que es Controller
 public class PersonaController {
 
